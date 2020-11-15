@@ -1,0 +1,14 @@
+include:
+    - project: accessable-net/gitlab-ci-templates
+      file: android.yml
+
+build:
+    extends: .android-assemble-release
+    script:
+        - cd $WORKDIR
+        - base64 -d $KEYSTORE_FILE > my.keystore
+        - ./gradlew exportVersion --daemon
+        - ./gradlew :push:assembleRelease --daemon --parallel -Pandroid.injected.signing.store.file=$(pwd)/my.keystore -Pandroid.injected.signing.store.password=$KEYSTORE_PASSWORD -Pandroid.injected.signing.key.alias=$KEY_ALIAS -Pandroid.injected.signing.key.password=$KEY_PASSWORD
+    artifacts:
+        paths: 
+            - push/build/outputs/apk/release/push-release.apk
