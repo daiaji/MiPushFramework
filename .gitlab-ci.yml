@@ -1,6 +1,8 @@
 include:
     - project: accessable-net/gitlab-ci-templates
       file: android.yml
+    - project: accessable-net/gitlab-ci-templates
+      file: scheduled_rebase.yml
 
 build:
     extends: .android-assemble-release
