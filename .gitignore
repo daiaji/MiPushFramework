@@ -11,3 +11,4 @@
 .yuuta.jks
 gradle.properties
 /push/includes
+/provider/src/main/java/top/trumeet/mipush/provider/gen
