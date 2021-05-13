@@ -2,7 +2,9 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 repositories {
-    maven { url 'https://dl.bintray.com/heruoxin/icebox' }
+    //maven { url 'https://dl.bintray.com/heruoxin/icebox' }
+    jcenter()
+    google()
 }
 
 
@@ -111,7 +113,8 @@ dependencies {
     implementation project(':extenders')
     implementation "com.android.support:palette-v7:$supportLibraryVersion"
 
-    implementation 'com.catchingnow.icebox:SDK:1.0.5'
+    //implementation 'com.catchingnow.icebox:SDK:1.0.5'
+	implementation fileTree(dir: 'includes', include: 'sdk-client-release.aar')
 
     implementation('com.github.AndroidSnippet:SetupWizardLibCompat:0.3', {
         exclude group: 'com.android.support'
@@ -130,10 +133,10 @@ dependencies {
     implementation 'moe.shizuku.preference:preference-simplemenu:2.2.3'
 
     // Help
-    implementation('moe.shizuku.support:helplib:1.1.0', {
-        exclude group: 'moe.shizuku.preference'
-        exclude group: 'com.android.support'
-    })
+    //implementation('moe.shizuku.support:helplib:1.1.0', {
+        //exclude group: 'moe.shizuku.preference'
+        //exclude group: 'com.android.support'
+    //})
     // RxJava & RxAndroid
     implementation("io.reactivex.rxjava2:rxandroid:$rxAndroidVersion", {
         exclude group: 'com.android.support'
@@ -160,7 +163,8 @@ buildscript {
 
     }
     dependencies {
-        classpath 'com.bryansharp:hibeaver:1.2.7'
+        //classpath 'com.bryansharp:hibeaver:1.2.7'
+		classpath fileTree(dir: 'includes', include: 'hibeaver-*-SNAPSHOT.jar')
     }
 }
 
