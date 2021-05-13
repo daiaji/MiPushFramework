@@ -1,0 +1,6 @@
+[submodule "hibeaver"]
+	path = hibeaver
+	url = https://github.com/lelemka0/hibeaver.git
+[submodule "IceBox-SDK"]
+	path = IceBox-SDK
+	url = https://github.com/lelemka0/IceBox-SDK.git

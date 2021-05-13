@@ -11,7 +11,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import moe.shizuku.support.helplib.HelpFragment;
+//import moe.shizuku.support.helplib.HelpFragment;
+import moe.shizuku.support:support-utils.HelpFragment;
 import com.xiaomi.xmsf.R;
 
 /**
